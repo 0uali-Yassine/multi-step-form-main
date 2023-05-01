@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Multi-step form</title>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      *{
+        /* # Colors */
+        /* ### Primary */
+        --Marine-blue: #02295a;
+        --Purplish-blue: #473dff;
+        --Pastel-blue: #adbeff;
+        --Light-blue: #bfe2fd;
+        --Strawberry-red: #ed3548;
+
+        /* ### Neutral */
+        --Cool-gray: #9699ab;
+        --Light-gray: #d6d9e6;
+        --Magnolia: #f0f6ff;
+        --Alabaster: #fafbff;
+        --White: #ffffff;
+
+        /* ## Typography */
+        /* ### Body Copy */
+        --Font-size-paragraph: 16px;
+      }
+      .font-family{
+        font-family: 'Ubuntu', sans-serif;
+      }
+    }
+  </style>
+
+</head>
+<body class="bg-[#adbeff] font-family max-[737px]:bg-white">
+
+  <main class="w-[780px] h-[550px] relative flex justify-between bg-white my-[50px] p-[10px] mx-auto rounded-lg select-none max-[822px]:w-full max-[737px]:flex-col max-[737px]:m-0 max-[737px]:bg-[#adbeff] max-[737px]:p-0">
+
+    <div class="nav1 flex flex-col  h-full w-[250px] rounded-md bg-[url('assets/images/bg-sidebar-desktop.svg')] bg-no-repeat bg-center py-[31px] max-[737px]:flex-row max-[737px]:w-full   max-[737px]:bg-cover max-[737px]:h-[150px] max-[737px]:absolute max-[737px]:left-0 max-[737px]:justify-center">
+      <div class="one flex justify-evenly w-[160px] mb-[20px] cursor-pointer ">
+        <div class="One_1 w-[30px] h-[30px] bg-[#bfe2fd]  flex justify-center items-center self-center font-bold border-[1px] border-[#fafbff] rounded-[50%]">1</div>
+        <div class="step_info flex flex-col max-[737px]:hidden">
+          <h1 class="text-[.8rem] text-[#9699ab] font-medium">STEP 1</h1>
+          <h1 class="text-[.9rem] text-[#fafbff] font-bold">YOUR INFO</h1>
+        </div>
+      </div>
+
+      <div class="two flex justify-evenly w-[160px] ml-[5px] mb-[20px] cursor-pointer">
+        <div class="One_2 w-[30px] h-[30px]  flex justify-center items-center self-center font-bold border-[1px] border-[#fafbff] rounded-[50%] text-[#fafbff]">2</div>
+        <div class="step_info flex flex-col max-[737px]:hidden">
+          <h1 class="text-[.8rem] text-[#9699ab] font-medium">STEP 2</h1>
+          <h1 class="text-[.9rem] text-[#fafbff] font-bold">SELECT PLAN</h1>
+        </div>
+      </div>
+      <div class="three flex justify-evenly w-[160px] ml-[-4px] mb-[20px] cursor-pointer">
+        <div class="One_3 w-[30px] h-[30px]  flex justify-center items-center self-center font-bold border-[1px] border-[#fafbff] rounded-[50%] text-[#fafbff]">3</div>
+        <div class="step_info flex flex-col max-[737px]:hidden">
+          <h1 class="text-[.8rem] text-[#9699ab] font-medium">STEP 3</h1>
+          <h1 class="text-[.9rem] text-[#fafbff] font-bold">ADD-ONS</h1>
+        </div>
+      </div>
+      <div class="four flex justify-evenly w-[160px] mb-[20px] ml-[-2px] cursor-pointer">
+        <div class="One_4 w-[30px] h-[30px] flex justify-center items-center self-center font-bold border-[1px] border-[#fafbff] rounded-[50%] text-[#fafbff]">4</div>
+        <div class="step_info flex flex-col max-[737px]:hidden">
+          <h1 class="text-[.8rem] text-[#9699ab] font-medium">STEP 4</h1>
+          <h1 class="text-[.9rem] text-[#fafbff] font-bold">SUMMARY</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav2 w-[450px] p-[20px] mr-[23px] h-full max-[737px]:mx-auto max-[737px]:absolute max-[737px]:top-[120px] max-[737px]:left-[18%] max-[737px]:h-[420px] max-[737px]:bg-white max-[737px]:rounded-xl max-[650px]:left-0 max-[650px]:w-full">
+      <div class="step1  flex flex-col justify-around w-[98%] max-[737px]:h-[479px]">
+        <h1 class="text-[#02295a] text-[2rem] font-bold">Personal info</h1>
+        <p class="text-[#9699ab] text-[.9rem] font-medium">Please provide your name, email address, and phone number.</p>
+
+        <form action="/index.html" class="h-[300px] flex flex-col justify-around mt-[10px]">
+          <div class="form1">
+            <div class="labels flex justify-between w-full">
+              <label for="name" class="text-[#02295a] font-bold text-[.9rem]">Name</label>
+              <label for="" class="text-[#ed3548] font-bold labelOne hidden">This field is required</label>
+            </div>
+            <input type="text" id="name" placeholder="e.g. Stephen King" class="inputName border-[#9699ab] text-[#02295a] font-bold border-[1px] w-full p-[10px] rounded-md outline-none focus:border-[#473dff]">
+          </div>
+
+          <div class="form2">
+            <div class="labels flex justify-between w-full">
+              <label for="name" class="text-[#02295a] font-bold text-[.9rem]">Email Address</label>
+              <label for="" class="text-[#ed3548] font-bold labelTwo hidden">This field is required</label>
+            </div>
+            <input type="text" id="name" placeholder="e.g. stephenking@lorem.com" class="inputEmail border-[#9699ab] text-[#02295a] font-bold border-[1px] w-full p-[10px] rounded-md outline-none focus:border-[#473dff]">
+          </div>
+
+          <div class="form3">
+            <div class="labels flex justify-between w-full">
+              <label for="name" class="text-[#02295a] font-bold text-[.9rem]"> Phone Number</label>
+              <label for="" class="text-[#ed3548] font-bold labelThree hidden">This field is required</label>
+            </div>
+            <input type="text" id="name" placeholder="e.g. +1 234 567 890" class="inputPhone border-[#9699ab] text-[#02295a] font-bold border-[1px] w-full p-[10px] rounded-md outline-none focus:border-[#473dff]">
+          </div>
+        </form>
+        <button class="btnStep_1 text-[.9rem] w-[110px] text-white px-[5px] py-[8px] mt-[89px] rounded-md bg-[#02295a] hover:bg-[#022a5a92] self-end cursor-not-allowed">Next Step</button>
+      </div>
+
+      <div class="step2  flex-col w-[98%] hidden max-[737px]:h-[479px]">
+        <h1 class="text-[#02295a] text-[2rem] font-bold">Select your plan</h1>
+        <p class="text-[#9699ab] text-[.9rem] font-medium">You have the option of monthly or yearly billing.</p>
+        <div class="sectionallPlan flex flex-col justify-around h-[220px] mt-[20px]">
+          <div class="Plan flex justify-between w-full h-[220px]">
+            <div class="section1 flex flex-col justify-around border-[1px] border-[#d6d9e6] rounded-md w-[125px] h-[150px] pl-[10px] hover:border-[#473dff] cursor-pointer">
+              <div class="icon_sectio_1 bg-[url('assets/images/icon-arcade.svg')] bg-no-repeat bg-cover w-[40px] h-[40px] rounded-[50%]"></div>
+              <div class="section_info">
+                <h1 class="text-[#02295a] font-bold">Arcade</h1>
+                <p class="paraOnestep1 text-[#9699ab] text-[.9rem]">$9/mo</p>
+                <h1 class=" free_months text-[.7rem] font-bold hidden text-[#02295a]">2 months free</h1>
+              </div>
+            </div>
+            <div class="section2 flex flex-col justify-around border-[1px] border-[#d6d9e6] rounded-md w-[125px] h-[150px] pl-[10px] hover:border-[#473dff] cursor-pointer">
+              <div class="icon_section_2 bg-[url('assets/images/icon-advanced.svg')] bg-no-repeat bg-cover w-[40px] h-[40px] rounded-[50%]"></div>
+              <div class="section_info2">
+                <h1 class="text-[#02295a] font-bold">Advanced</h1>
+                <p class="paraTwostep1 text-[#9699ab] text-[.9rem]">$12/mo</p>
+                <h1 class=" free_months text-[.7rem] font-bold hidden text-[#02295a]">2 months free</h1>
+              </div>
+            </div>
+            <div class="section3 flex flex-col justify-around border-[1px] border-[#d6d9e6] rounded-md w-[125px] h-[150px] pl-[10px] hover:border-[#473dff] cursor-pointer">
+              <div class="icon_section_3 bg-[url('assets/images/icon-pro.svg')] bg-no-repeat bg-cover w-[40px] h-[40px] rounded-[50%]"></div>
+              <div class="section_info3">
+                <h1 class="text-[#02295a] font-bold">Pro</h1>
+                <p class="paraThreestep1 text-[#9699ab] text-[.9rem]">$15/mo</p>
+                <h1 class=" free_months text-[.7rem] font-bold hidden text-[#02295a]">2 months free</h1>
+              </div>
+            </div>
+          </div>
+          <div class="MonthlyOrYearly w-full h-[60px] items-center bg-[#f0f6ffa7] flex justify-center rounded-md">
+            <h1 class="monthly text-[.9rem] text-[#022a5a] font-bold">Monthly</h1>
+            <div class="btnForchoise flex  w-[39px] h-[20px] bg-[#02295a] rounded-xl px-[4px] mx-[15px]">
+                <div class="btnChoise bg-white self-center w-[13px] h-[13px] rounded-[50%]"></div>
+            </div>
+            <h1 class="yearly text-[.9rem] text-[#9699ab] font-bold">Yearly</h1>
+          </div>
+        </div>
+        <div class="back_Next flex justify-between w-full mt-[68px] max-[737px]:mt-[40px]">
+          <h1 class="go_back_step2 text-[#9699ab] font-bold  self-end mb-[10px] hover:text-[#02295a] cursor-pointer">Go Back</h1>
+          <button class="btnStep_2 text-[.9rem] w-[110px] text-white px-[5px] py-[8px] mt-[91px] rounded-md bg-[#02295a] hover:bg-[#022a5a92] cursor-not-allowed">Next Step</button>
+        </div>
+      </div>
+
+      <div class="step3 flex-col w-[98%] hidden max-[737px]:h-[479px]">
+        <h1 class="text-[#02295a] text-[2rem] font-bold">Pick add-ons</h1>
+        <p class="text-[#9699ab] text-[.9rem] font-medium"> Add-ons help enhance your gaming experience.</p>
+        <div class="allCheckBoxes flex flex-col justify-evenly h-[250px] mt-[22px] ">
+          <label for="check1" class="check_one flex justify-between px-[15px] h-[67px] w-[350px] border-[1px] border-[#d6d9e6] rounded-md hover:border-[#473dff] cursor-pointer max-[737px]:m-auto">
+            <div class="input_addOnes flex justify-between w-[200px]">
+              <input type="checkbox" id="check1" class="w-[15px] accent-[#473dff]">
+              <div class="addOnes self-center">
+                <h1 class="text-[.9rem] font-bold text-[#02295a]">Online service</h1>
+                <p class="text-[.8rem] text-[#9699ab]">Access to multiplayer games</p>
+              </div>
+            </div>
+            
+            <p class="paraCheck1 text-[#473dff] text-[.8rem] font-bold self-center">+$1/mo</p>
+          </label>
+
+          <label for="check2" class="check_two flex justify-between px-[15px] h-[67px] w-[350px] border-[1px] border-[#d6d9e6] rounded-md hover:border-[#473dff] cursor-pointer max-[737px]:m-auto">
+            <div class="input_addOnes flex justify-between w-[174px]">
+              <input type="checkbox" id="check2" class="w-[15px] accent-[#473dff]">
+              <div class="addOnes self-center">
+                <h1 class="text-[.9rem] font-bold text-[#02295a]">Larger storage</h1>
+                <p class="text-[.8rem] text-[#9699ab]"> Extra 1TB of cloud save</p>
+              </div>
+            </div>
+            
+            <p class="paraCheck2 text-[#473dff] text-[.8rem] font-bold self-center">+$2/mo</p>
+          </label>
+
+          <label for="check3" class="check_three flex justify-between px-[15px] h-[67px] w-[350px] border-[1px] border-[#d6d9e6] rounded-md hover:border-[#473dff] cursor-pointer max-[737px]:m-auto">
+            <div class="input_addOnes flex justify-between w-[215px]">
+              <input type="checkbox" id="check3" class="w-[15px] accent-[#473dff]">
+              <div class="addOnes self-center">
+                <h1 class="text-[.9rem] font-bold text-[#02295a]">Customizable Profile</h1>
+                <p class="text-[.8rem] text-[#9699ab]">Custom theme on your profile</p>
+              </div>
+            </div>
+            
+            <p class="paraCheck3 text-[#473dff] text-[.8rem] font-bold self-center">+$2/mo</p>
+          </label>
+        </div>
+        <div class="back_Next flex justify-between w-full mt-[39px] max-[737px]:mt-[9px]">
+          <h1 class="go_back_step3 text-[#9699ab] font-bold  self-end mb-[10px] hover:text-[#02295a] cursor-pointer">Go Back</h1>
+          <button class="btnStep_3 text-[.9rem] w-[110px] text-white px-[5px] py-[8px] mt-[91px] rounded-md bg-[#02295a] hover:bg-[#022a5a92] cursor-not-allowed">Next Step</button>
+        </div>
+      </div>
+
+      <div class="step4  hidden flex-col w-[98%] relative max-[737px]:h-[479px]">
+        <h1 class="text-[#02295a] text-[2rem] font-bold">Finishing up</h1>
+        <p class="text-[#9699ab] text-[.9rem] font-medium">Double-check everything looks OK before confirming.</p>
+        <div class="bg-[#f0f6ffa7] rounded-md p-[20px] mt-[30px] flex flex-col ">
+          <div class="firstPlan flex justify-between border-b-[1px] border-[#9699ab49] pb-[15px]">
+            <div class="">
+              <p class="choisePlanFinal text-[#02295a] font-bold">Arcade(Monthly)</p>
+              <a href="#" class="Change text-[.8rem] text-[#9699ab] underline underline-offset-1">Change</a>
+            </div>
+            <p class="PricePlanFinal text-[#02295a] text-[.9rem] font-bold self-center">$9/mo</p>
+            
+          </div>
+          <div class="theAddsOnes flex flex-col justify-between pt-[10px]">
+            <div class="adds1 hidden justify-between pb-[10px]">
+              <h1 class="addsOneChoise1 text-[.9rem] text-[#9699ab]">Online service</h1>
+              <p class="paraPriceAdds1 text-[.8rem] text-[#02295a] font-bold">+$1/mo</p>
+            </div>
+            <div class="adds2 hidden justify-between">
+              <h1 class="addsOneChoise2 text-[.9rem] text-[#9699ab]">Online service</h1>
+              <p class="paraPriceAdds2 text-[.8rem] text-[#02295a] font-bold">+$1/mo</p>
+            </div>
+            <div class="adds3  hidden justify-between py-[10px]">
+              <h1 class="addsOneChoise3 text-[.9rem] text-[#9699ab]">Online service</h1>
+              <p class="paraPriceAdds3 text-[.8rem] text-[#02295a] font-bold">+$1/mo</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="total flex justify-between px-[20px] py-[20px]">
+          <h1 class="total_m_y text-[.8rem] text-[#9699ab] font-bold">Total(per month)</h1>
+          <p class="totalPrice text-[#473dff] text-[1rem] font-bold">+$12/mo</p>
+        </div>
+        <div class="back_Next flex justify-between w-full  absolute bottom-[-137px] max-[737px]:mb-[136px]">
+          <h1 class="go_back_step4 text-[#9699ab] font-bold  self-end mb-[10px] hover:text-[#02295a] cursor-pointer">Go Back</h1>
+          <button class="confirm text-[.9rem] w-[110px] text-white px-[5px] py-[8px] mt-[91px] rounded-md bg-[#473dff] hover:bg-[#473dff7c] cursor-pointer">Confirm</button>
+        </div>
+      </div>
+
+      <div class="stepFinal text-center hidden  flex-col justify-between w-[98%] h-[200px] mt-[33%] max-[737px]:mt-[86px]">
+        <div class="imageFinal m-auto bg-[url('assets/images/icon-thank-you.svg')] bg-no-repeat bg-cover w-[70px] h-[70px] rounded-[]"></div>
+        <h1 class="text-[#02295a] text-[2rem] font-bold">Thank you!</h1>
+        <p class="text-[#9699ab] text-[.9rem]">Thanks for confirming your subscription! We hope you have fun 
+          using our platform. If you ever need support, please feel free 
+          to email us at support@loremgaming.com.
+        </p>
+      </div>
+
+    </div>
+      
+    
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
